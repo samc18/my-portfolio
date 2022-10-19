@@ -15,7 +15,7 @@ img {
     --ff-primary: 'Montserrat', sans-serif;
 
     --fs-100: 1rem; 
-    --fs-200: 1.25rem;
+    --fs-200: 1.17rem;
     --fs-300: 1.875rem;
     --fs-500: 2.5rem;
     --fs-600: 3.125rem;
@@ -25,8 +25,9 @@ img {
     --fw-600: 600;
     --fw-700: 700;
 
-    --clr-primary: #000000;
-    --clr-seconday: #303030;
+    --clr-primary: #ffffff;
+    --clr-text-primary: #000000;
+    --clr-text-secondary: #303030;
 
     --margin-inline-m: 1.25em;
 }
@@ -54,24 +55,52 @@ body {
     height: 0px;
 }
 
-.link a {
+.link a,
+a {
     text-decoration: none;
+    color: var(--clr-text-primary);
+}
+
+.about-me__title,
+.my-skills__title,
+.my-work__title,
+.contact__title {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-700);
+}
+
+.about-me__description,
+.my-skills__description,
+.my-work__description,
+.my-work__project-description,
+.contact__description {
+    color: var(--clr-text-secondary);
+    font-size: var(--fs-100);
+}
+
+.my-skills__subtitle {
+    font-size: var(--fs-200);
+    font-weight: var(--fw-700);
+}
+
+.skill {
     color: var(--clr-primary);
 }
 
-.about-me__title {
-    font-size: var(--fs-300);
+.my-work__project-title {
+    font-size: var(--fs-200);
+    font-weight: var(--fw-700);
 }
 
-.about-me__description {
-    color: var(--clr-seconday);
+.my-work__project-link {
+    font-weight: var(--fw-700);
 }
 
 .contact__mail a {
     font-weight: var(--fw-600);
-    color: var(--clr-primary);
+    color: var(--clr-text-primary);
     text-decoration: none;
-    border-bottom: 2.5px solid var(--clr-primary);
+    border-bottom: 2.5px solid var(--clr-text-primary);
 }
 
 /* Layout */
@@ -99,27 +128,32 @@ body {
     display: flex;
     align-items: center;
     animation-name: show-line;
-    animation-duration: 3s;
-    animation-timing-function: ease-out
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
 .header__links .line {
     width: 150px;
     height: 1px;
-    background-color: var(--clr-primary);
+    background-color: var(--clr-text-primary);
 }
 
 .header__links .link:nth-of-type(n+1) {
     margin-left: 0.5em;
 }
 
-.header__links .link {
-    cursor: pointer;
+.header__title {
+    animation: show-title;
+    animation-duration: 1.5s;
 }
 
-@keyframes show-line {
-    0% {width: 0%;}
-    100% {width: 100%;}
+.link {
+    transition: all 0.3s;
+}
+
+.link:hover,
+.link:focus {
+    transform: scale(1.1);
 }
 
 .about-me {
@@ -130,8 +164,33 @@ body {
     margin-inline: var(--margin-inline-m);
 }
 
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+}
+
+.skill {
+    background-color: var(--clr-text-primary);
+    padding: 1em;
+    margin-top: 0.5em;
+}
+
+.skill:nth-of-type(n) {
+    margin-right: 1.5em;
+}
+
 .my-work {
     margin-inline: var(--margin-inline-m);
+}
+
+.my-work__project-img {
+    box-shadow: -3.33165px 3.33165px 19.9899px 3.33165px rgba(0, 0, 0, 0.25);
+    width: 400px;
+}
+
+.my-work__project-link {
+    cursor: pointer;
 }
 
 .contact {
@@ -151,4 +210,26 @@ body {
 
 .footer__links .link:nth-of-type(n+1) {
     margin-left: 0.5em;
+}
+
+/* Animations */
+
+@keyframes show-line {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes show-title {
+    0% {
+        transform: translateY(250px)
+    }
+
+    100% {
+        transform: translateY(0px)
+    }
 }
