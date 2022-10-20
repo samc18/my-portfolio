@@ -30,6 +30,7 @@ img {
     --clr-text-secondary: #303030;
 
     --margin-inline-m: 1.25em;
+    --margin-inline-d: 3.125em;
 }
 
 /* Typography */
@@ -129,7 +130,7 @@ a {
     align-items: center;
     animation-name: show-line;
     animation-duration: 2s;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-in-out;
 }
 
 .header__links .line {
@@ -143,7 +144,7 @@ a {
 }
 
 .header__title {
-    animation: show-title;
+    animation: slide-top;
     animation-duration: 1.5s;
 }
 
@@ -156,8 +157,59 @@ a {
     transform: scale(1.1);
 }
 
+@media (min-width: 50em) {
+    .header {
+        margin-inline: var(--margin-inline-d);
+    }
+    .header__title {
+        font-size: var(--fs-700);
+    }
+}
+
 .about-me {
     margin-inline: var(--margin-inline-m);
+}
+
+.about-me__img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+}
+
+@media (min-width: 50em) {
+    .about-me {
+        margin-inline: var(--margin-inline-d);
+    }
+    .about-me__img {
+        height: 350px;
+    }
+    .about-me__description {
+        display: grid;
+        grid-template-areas: 
+            "p1 p4"
+            "p2 p5"
+            "p3 p5";
+    }
+    .about-me__description p:nth-child(1) {
+        grid-area: p1;
+        margin-bottom: 0;
+    }
+    .about-me__description p:nth-child(2) {
+        grid-area: p2;
+        margin-bottom: 0;
+    }
+    .about-me__description p:nth-child(3) {
+        grid-area: p3;
+        margin-bottom: 0;
+    }
+    .about-me__description p:nth-child(4) {
+        grid-area: p4;
+        margin-bottom: 0;
+    }
+    .about-me__description p:nth-child(5) {
+        grid-area: p5;
+        margin-bottom: 0;
+    }
 }
 
 .my-skills {
@@ -180,8 +232,26 @@ a {
     margin-right: 1.5em;
 }
 
+@media (min-width: 50em) {
+    .my-skills {
+        margin-inline: var(--margin-inline-d);
+    }
+    .my-skills__description {
+        width: 55%;
+    }
+}
+
 .my-work {
     margin-inline: var(--margin-inline-m);
+}
+
+.my-work__projects {
+    display: grid;
+    justify-items: center;
+}
+
+.my-work__project {
+    margin-top: 3.5em;
 }
 
 .my-work__project-img {
@@ -193,8 +263,26 @@ a {
     cursor: pointer;
 }
 
+@media (min-width: 50em) {
+    .my-work {
+        margin-inline: var(--margin-inline-d);
+    }
+    .my-work__description {
+        width: 55%;
+    }
+    .my-work__projects {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .contact {
     margin-inline: var(--margin-inline-m);
+}
+
+@media (min-width: 50em) {
+    .contact {
+        margin-inline: var(--margin-inline-d);
+    }
 }
 
 .footer {
@@ -212,6 +300,12 @@ a {
     margin-left: 0.5em;
 }
 
+@media (min-width: 50em) {
+    .footer {
+        margin-inline: var(--margin-inline-d);
+    }
+}
+
 /* Animations */
 
 @keyframes show-line {
@@ -224,12 +318,26 @@ a {
     }
 }
 
-@keyframes show-title {
+@-webkit-keyframes slide-top {
     0% {
-        transform: translateY(250px)
+        -webkit-transform: translateY(250px);
+        transform: translateY(250px);
     }
 
     100% {
-        transform: translateY(0px)
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(250px);
+        transform: translateY(250px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 }
