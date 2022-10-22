@@ -27,10 +27,13 @@ img {
 
     --clr-primary: #ffffff;
     --clr-text-primary: #000000;
-    --clr-text-secondary: #303030;
+    --clr-text-secondary: #4e4e4e;
 
     --margin-inline-m: 1.25em;
     --margin-inline-d: 3.125em;
+
+    --margin-block-m: 4em;
+    --margin-block-d: 8em;
 }
 
 /* Typography */
@@ -45,7 +48,8 @@ body {
     font-weight: var(--fw-600);
 }
 
-.ri-moon-fill {
+.ri-moon-fill,
+.ri-sun-fill {
     font-size: var(--fs-300);
 }
 
@@ -77,11 +81,6 @@ a {
 .contact__description {
     color: var(--clr-text-secondary);
     font-size: var(--fs-100);
-}
-
-.my-skills__subtitle {
-    font-size: var(--fs-200);
-    font-weight: var(--fw-700);
 }
 
 .skill {
@@ -117,7 +116,8 @@ a {
     align-items: center;
 }
 
-.ri-moon-fill {
+.ri-moon-fill,
+.ri-sun-fill {
     cursor: pointer;
 }
 
@@ -186,9 +186,8 @@ a {
     .about-me__description {
         display: grid;
         grid-template-areas: 
-            "p1 p4"
-            "p2 p5"
-            "p3 p5";
+            "p1 p3"
+            "p2 p4";
     }
     .about-me__description p:nth-child(1) {
         grid-area: p1;
@@ -206,14 +205,11 @@ a {
         grid-area: p4;
         margin-bottom: 0;
     }
-    .about-me__description p:nth-child(5) {
-        grid-area: p5;
-        margin-bottom: 0;
-    }
 }
 
 .my-skills {
     margin-inline: var(--margin-inline-m);
+    margin-top: var(--margin-block-m);
 }
 
 .skills-container {
@@ -224,8 +220,8 @@ a {
 
 .skill {
     background-color: var(--clr-text-primary);
-    padding: 1em;
-    margin-top: 0.5em;
+    padding: 0.8em 1em;
+    margin-top: 1.2em;
 }
 
 .skill:nth-of-type(n) {
@@ -235,6 +231,7 @@ a {
 @media (min-width: 50em) {
     .my-skills {
         margin-inline: var(--margin-inline-d);
+        margin-top: var(--margin-block-d);
     }
     .my-skills__description {
         width: 55%;
@@ -243,6 +240,7 @@ a {
 
 .my-work {
     margin-inline: var(--margin-inline-m);
+    margin-top: var(--margin-block-m);
 }
 
 .my-work__projects {
@@ -266,22 +264,25 @@ a {
 @media (min-width: 50em) {
     .my-work {
         margin-inline: var(--margin-inline-d);
+        margin-top: var(--margin-block-d);
     }
     .my-work__description {
         width: 55%;
     }
     .my-work__projects {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
 
 .contact {
     margin-inline: var(--margin-inline-m);
+    margin-top: var(--margin-block-m);
 }
 
 @media (min-width: 50em) {
     .contact {
         margin-inline: var(--margin-inline-d);
+        margin-top: var(--margin-block-d);
     }
 }
 
