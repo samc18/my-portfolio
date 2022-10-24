@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-    <header class="project-header">
+    <header class="project-header | margin-inline">
         <nav class="header__nav">
             <p class="header__nav-logo">[Sam ]</p>
             <i class="ri-moon-fill"></i>
@@ -29,10 +29,11 @@
         </nav>
     </header>
     <main>
-        <section class="project-intro">
+        <section class="project-intro | margin-inline">
             <h1 class="project-intro__title">My Finances Checker</h1>
-            <p class="project-intro__description">This app allows you to check how healthy your budget distribution is. You can enter your different incomes and
-                expenses and will analyze how well distributed is.</p>
+            <p class="project-intro__description | description">This app allows users to gauge how healthy their monthly finances are based on the 50-30-20 budgeting
+                method by receiving users incomes and expenses as inputs.
+            </p>
             <div class="project-intro__stack-live-container">
                 <div class="project-intro__stack">
                     <p class="project-intro__stack-title">Stack</p>
@@ -44,63 +45,54 @@
                 </div>
                 <div class="project-intro__live-demo">
                     <p class="project-intro__live-demo-title">Live</p>
-                    <p class="project-intro__live-demo-link"><a href="">View Site</a></p>
+                    <p class="project-intro__live-demo-link"><a href=""><strong>View Site</strong></a></p>
                 </div>
             </div>
             <img class="project-intro__img" src="./assets/my-finances-checker/my-finances-checker-1.png" alt="">
         </section>
-        <section class="project-purpose-and-goal">
-            <h2 class="project-purpose-and-goal__title">Purpose and Goal</h2>
-            <div class="project-purpose-and-goal__description">
-                <p>I noticed that when I was talking to friends and family not many of them were aware of the 50-30-20 rule, so I
-                    decided to create this app to help them with this budgeting framework and make it easier for them by not using spreadsheets.
-                    I think is important for people to know about this rule since it can have huge effects on their financials.</p>
-                <p>The main goal of the project was to have a calculator to check the monthly budget and also a section with a bit of
-                    explaining about why it is important.</p>
-                <p>At first the design was pretty simple, with just the calculator. As I thought a bit more about a regular user
-                    navigating throught app I started to add extra features that would enhance the UX like modals with tips.</p>
+        <section class="project-purpose-and-goal | margin-inline margin-top">
+            <h2 class="project-purpose-and-goal__title | title">Purpose and Goal</h2>
+            <div class="project-purpose-and-goal__description | description">
+                <p>The idea came to me after talking to friends and family. We were talking about personal finance. When I mentioned the 50-30-20
+                    budgeting method, which I learned after reading this <a href="https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator" target="_blank">
+                    <strong>article</strong></a>, I realized that many people haven't heard about it.</p>
+                <p>The main goal of the project was to teach users about this method and present them with an easy tool to gauge how well their
+                    monthly budget is distributed.</p>
             </div>
         </section>
-        <section class="project-web-stack-and-explanation">
-            <h2 class="project-web-stack-and-explanation__title">Web Stack and Explanation</h2>
-            <img class="project-web-stack-and-explanation__img" src="" alt="">
-            <div class="project-web-stack-and-explanation__description">
-                <p>React is my go to JavaScript library. I like it because it allows you to work with components which combines logic
-                    and UI.</p>
-                <p>So what better tool to create this project than React. I also used React Router to make it a SPA.</p>
+        <section class="project-web-stack-and-explanation | margin-inline margin-top">
+            <h2 class="project-web-stack-and-explanation__title | title">Web Stack and Explanation</h2>
+            <div class="project-web-stack-and-explanation-img-description-container">
+                <img class="project-web-stack-and-explanation__img" src="./assets/my-finances-checker/react.png" alt="">
+                <div class="project-web-stack-and-explanation__description | description">
+                    <p>React is my go to JavaScript library. It allows you to work with components that combines logic
+                        and UI.</p>
+                    <p>So what better tool to create this project than React. I also used React Router to make it a
+                        Single Page Application (SPA).</p>
+                </div>
             </div>
         </section>
-        <img class="project-img" src="./assets/my-finances-checker/my-finances-checker-2.png" alt="">
-        <img class="project-img" src="./assets/my-finances-checker/my-finances-checker-3.png" alt="">
-        <section class="project-problems-and-thought-process">
-            <h2 class="project-problems-and-thought-process__title">Problems and Thought Process</h2>
-            <div class="project-problems-and-thought-process__description">
-                <p>I noticed that when I was talking to friends and family not many of them were aware of the 50-30-20 rule, so I
-                    decided to create this app to help them with this budgeting framework and make it easier for them by not using
-                    spreadsheets.
-                    I think is important for people to know about this rule since it can have huge effects on their financials.</p>
-                <p>The main goal of the project was to have a calculator to check the monthly budget and also a section with a bit of
-                    explaining about why it is important.</p>
-                <p>At first the design was pretty simple, with just the calculator. As I thought a bit more about a regular user
-                    navigating throught app I started to add extra features that would enhance the UX like modals with tips.</p>
+        <div class="project-img-container">
+            <img class="project-img" src="./assets/my-finances-checker/my-finances-checker-2.png" alt="">
+            <img class="project-img" src="./assets/my-finances-checker/my-finances-checker-3.png" alt="">
+        </div>
+        <section class="project-problems-and-thought-process | margin-inline margin-top">
+            <h2 class="project-problems-and-thought-process__title | title">Problems and Thought Process</h2>
+            <div class="project-problems-and-thought-process__description | description">
+                <p></p>
+                <p></p>
             </div>
         </section>
         <img class="project-img" src="./assets/my-finances-checker/my-finances-checker-4.png" alt="">
-        <section class="project-lessons-learned">
-            <h2 class="project-lessons-learned__title">Lessons Learned</h2>
-            <div class="project-lesosns-learned__description">
-                <p>I noticed that when I was talking to friends and family not many of them were aware of the 50-30-20 rule, so I
-                    decided to create this app to help them with this budgeting framework and make it easier for them by not using
-                    spreadsheets.
-                    I think is important for people to know about this rule since it can have huge effects on their financials.</p>
-                <p>The main goal of the project was to have a calculator to check the monthly budget and also a section with a bit of
-                    explaining about why it is important.</p>
-                <p>At first the design was pretty simple, with just the calculator. As I thought a bit more about a regular user
-                    navigating throught app I started to add extra features that would enhance the UX like modals with tips.</p>
+        <section class="project-lessons-learned | margin-inline margin-top">
+            <h2 class="project-lessons-learned__title | title">Lessons Learned</h2>
+            <div class="project-lessons-learned__description | description">
+                <p></p>
+                <p></p>
             </div>
         </section>
-        <section class="other-projects">
-            <h2 class="other-projects__title">Other Projects</h2>
+        <!-- <section class="other-projects | margin-inline margin-top">
+            <h2 class="other-projects__title | title">Other Projects</h2>
             <div class="my-work__projects">
                 <div class="my-work__project">
                     <img class="my-work__project-img" src="./assets/my-finances-checker/my-finances-checker.png" alt="">
@@ -109,14 +101,14 @@
                     <p class="my-work__project-link"><a href="">Coming soon</a></p>
                 </div>
             </div>
-        </section>
-        <section class="contact">
-            <h2 class="contact__title">Contact</h2>
-            <p class="contact__description">Please feel free to reach out, let's geek together!</p>
+        </section> -->
+        <section class="contact | margin-inline margin-top">
+            <h2 class="contact__title | title">Contact</h2>
+            <p class="contact__description | description">Please feel free to reach out, let's geek together!</p>
             <p class="contact__mail"><a href="mailto:byfyos72@gmail.com" target="_blank">byfyos72@gmail.com</a></p>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer | margin-inline">
         <p class="footer__logo">[Sam ]</p>
         <div class="footer__links">
             <p class="link"><a href="https://github.com/samc18" target="_blank">github</a></p>

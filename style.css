@@ -32,8 +32,37 @@ img {
     --margin-inline-m: 1.25em;
     --margin-inline-d: 3.125em;
 
-    --margin-block-m: 4em;
-    --margin-block-d: 8em;
+    --margin-top-m: 4em;
+    --margin-top-d: 8em;
+}
+
+/* Utility Classes */
+
+.margin-inline {
+    margin-inline: var(--margin-inline-m);
+}
+
+.margin-top {
+    margin-top: var(--margin-top-m);
+}
+
+.title {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-700);
+}
+
+.description {
+    color: var(--clr-text-secondary);
+    font-size: var(--fs-100);
+}
+
+@media (min-width: 50em) {
+    .margin-inline {
+        margin-inline: var(--margin-inline-d);
+    }
+    .margin-top {
+        margin-top: var(--margin-top-d);
+    }
 }
 
 /* Typography */
@@ -71,33 +100,6 @@ a {
     font-weight: var(--fw-700);
 }
 
-.about-me__title,
-.my-skills__title,
-.my-work__title,
-.contact__title,
-.project-purpose-and-goal__title,
-.project-web-stack-and-explanation__title,
-.project-problems-and-thought-process__title,
-.project-lessons-learned__title,
-.other-projects__title {
-    font-size: var(--fs-300);
-    font-weight: var(--fw-700);
-}
-
-.about-me__description,
-.my-skills__description,
-.my-work__description,
-.my-work__project-description,
-.contact__description,
-.project-intro__description,
-.project-purpose-and-goal__description,
-.project-web-stack-and-explanation__description,
-.project-problems-and-thought-process__description,
-.project-lesosns-learned__description {
-    color: var(--clr-text-secondary);
-    font-size: var(--fs-100);
-}
-
 .skill {
     color: var(--clr-primary);
 }
@@ -119,8 +121,7 @@ a {
 }
 
 .project-intro__stack-title,
-.project-intro__live-demo-title,
-.project-intro__live-demo-link {
+.project-intro__live-demo-title {
     font-weight: var(--fw-700);
 }
 
@@ -128,7 +129,6 @@ a {
 
 .header {
     height: 100vh;
-    margin-inline: var(--margin-inline-m);
 }
 
 .header__nav {
@@ -141,7 +141,7 @@ a {
 .ri-sun-fill {
     cursor: pointer;
     animation-name: flip-in-ver-right;
-    animation-duration: 0.8s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
 }
 
@@ -183,19 +183,12 @@ a {
 }
 
 @media (min-width: 50em) {
-    .header {
-        margin-inline: var(--margin-inline-d);
-    }
     .header__title {
         font-size: var(--fs-700);
     }
 }
 
 /* About Me Layout */
-
-.about-me {
-    margin-inline: var(--margin-inline-m);
-}
 
 .about-me__img {
     object-fit: cover;
@@ -204,42 +197,19 @@ a {
 }
 
 @media (min-width: 50em) {
-    .about-me {
-        margin-inline: var(--margin-inline-d);
-    }
     .about-me__img {
         height: 350px;
     }
     .about-me__description {
-        display: grid;
-        grid-template-areas: 
-            "p1 p3"
-            "p2 p4";
+        display: flex;
+        gap: 1.2em;
     }
-    .about-me__description p:nth-child(1) {
-        grid-area: p1;
-        margin-bottom: 0;
-    }
-    .about-me__description p:nth-child(2) {
-        grid-area: p2;
-        margin-bottom: 0;
-    }
-    .about-me__description p:nth-child(3) {
-        grid-area: p3;
-        margin-bottom: 0;
-    }
-    .about-me__description p:nth-child(4) {
-        grid-area: p4;
-        margin-bottom: 0;
+    .about-me__description-column {
+        width: 50%;
     }
 }
 
 /* My Skills Layout */
-
-.my-skills {
-    margin-inline: var(--margin-inline-m);
-    margin-top: var(--margin-block-m);
-}
 
 .skills-container {
     display: flex;
@@ -258,21 +228,12 @@ a {
 }
 
 @media (min-width: 50em) {
-    .my-skills {
-        margin-inline: var(--margin-inline-d);
-        margin-top: var(--margin-block-d);
-    }
     .my-skills__description {
         width: 55%;
     }
 }
 
 /* My Work Layout */
-
-.my-work {
-    margin-inline: var(--margin-inline-m);
-    margin-top: var(--margin-block-m);
-}
 
 .my-work__projects {
     display: grid;
@@ -293,10 +254,6 @@ a {
 }
 
 @media (min-width: 50em) {
-    .my-work {
-        margin-inline: var(--margin-inline-d);
-        margin-top: var(--margin-block-d);
-    }
     .my-work__description {
         width: 55%;
     }
@@ -305,24 +262,9 @@ a {
     }
 }
 
-/* Contact Layout */
-
-.contact {
-    margin-inline: var(--margin-inline-m);
-    margin-top: var(--margin-block-m);
-}
-
-@media (min-width: 50em) {
-    .contact {
-        margin-inline: var(--margin-inline-d);
-        margin-top: var(--margin-block-d);
-    }
-}
-
 /* Footer Layout */
 
 .footer {
-    margin-inline: var(--margin-inline-m);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -334,12 +276,6 @@ a {
 
 .footer__links .link:nth-of-type(n+1) {
     margin-left: 0.5em;
-}
-
-@media (min-width: 50em) {
-    .footer {
-        margin-inline: var(--margin-inline-d);
-    }
 }
 
 /* Project Layout */
@@ -354,50 +290,43 @@ a {
     margin-right: 2em;
 }
 
-.project-intro__img {
-    width: 500px;
-    margin-inline: auto;
-}
-
+.project-intro__img,
 .project-img {
-    width: 500px;
+    width: 400px;
     margin-inline: auto;
+    margin-top: 2em;
 }
 
-.project-header,
-.project-intro,
-.project-purpose-and-goal,
-.project-web-stack-and-explanation,
-.project-problems-and-thought-process,
-.project-lessons-learned,
-.other-projects {
-    margin-inline: var(--margin-inline-m);
-}
-
-.project-purpose-and-goal,
-.project-web-stack-and-explanation,
-.project-problems-and-thought-process,
-.project-lessons-learned,
-.other-projects {
-    margin-top: var(--margin-block-m);
+.project-web-stack-and-explanation__img {
+    margin-inline: auto;
 }
 
 @media (min-width: 50em) {
-    .project-header,
-    .project-intro,
-    .project-purpose-and-goal,
-    .project-web-stack-and-explanation,
-    .project-problems-and-thought-process,
-    .project-lessons-learned,
-    .other-projects {
-        margin-inline: var(--margin-inline-d);
+    .project-intro__description,
+    .project-purpose-and-goal__description,
+    .project-web-stack-and-explanation__description,
+    .project-problems-and-thought-process__description,
+    .project-lessons-learned__description {
+        width: 55%;
     }
-    .project-purpose-and-goal,
-    .project-web-stack-and-explanation,
-    .project-problems-and-thought-process,
-    .project-lessons-learned,
-    .other-projects {
-        margin-top: var(--margin-block-d);
+    .project-intro__img {
+        width: 50%;
+    }
+    .project-web-stack-and-explanation-img-description-container {
+        display: flex;
+        align-items: flex-start;
+    }
+    .project-web-stack-and-explanation__img {
+        margin: 0 2em 0 0;
+        align-self: center;
+    }
+    .project-img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .project-img {
+        width: 45%;
     }
 }
 
