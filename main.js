@@ -7,9 +7,6 @@ moonIcon.addEventListener('click', () => {
     document.querySelectorAll('p').forEach(el => {
         el.style.color = '#fff'
     })
-    document.querySelectorAll('a').forEach(el => {
-        el.style.color = '#fff'
-    })
     if (document.getElementsByClassName('line').length > 0) {
         document.querySelector('.line').style.backgroundColor = '#fff'
     }
@@ -25,8 +22,11 @@ sunIcon.addEventListener('click', () => {
     document.querySelectorAll('p').forEach(el => {
         el.style.color = '#000'
     })
-    document.querySelectorAll('a').forEach(el => {
-        el.style.color = '#000'
+    document.querySelectorAll('.description').forEach(el => {
+        el.style.color = '#4e4e4e'
+    })
+    document.querySelectorAll('.description p').forEach(el => {
+        el.style.color = '#4e4e4e'
     })
     if (document.getElementsByClassName('line').length > 0) {
         document.querySelector('.line').style.backgroundColor = '#000'

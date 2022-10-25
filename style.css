@@ -56,6 +56,10 @@ img {
     font-size: var(--fs-100);
 }
 
+.img-shadow {
+    box-shadow: -3.33165px 3.33165px 19.9899px 3.33165px rgba(0, 0, 0, 0.25);
+}
+
 @media (min-width: 50em) {
     .margin-inline {
         margin-inline: var(--margin-inline-d);
@@ -89,10 +93,9 @@ body {
     height: 0px;
 }
 
-.link a,
 a {
     text-decoration: none;
-    color: var(--clr-text-primary);
+    color: inherit;
 }
 
 .project-intro__title {
@@ -115,7 +118,6 @@ a {
 
 .contact__mail a {
     font-weight: var(--fw-600);
-    color: var(--clr-text-primary);
     text-decoration: none;
     border-bottom: 2.5px solid var(--clr-text-primary);
 }
@@ -245,7 +247,6 @@ a {
 }
 
 .my-work__project-img {
-    box-shadow: -3.33165px 3.33165px 19.9899px 3.33165px rgba(0, 0, 0, 0.25);
     width: 400px;
 }
 
@@ -274,8 +275,18 @@ a {
     display: flex;
 }
 
+.footer__links-column {
+    display: flex;
+}
+
 .footer__links .link:nth-of-type(n+1) {
     margin-left: 0.5em;
+}
+
+@media (max-width: 410px) {
+    .footer__links-column {
+        display: block;
+    }
 }
 
 /* Project Layout */
