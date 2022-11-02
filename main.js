@@ -1,7 +1,7 @@
 const moonIcon = document.querySelector('.ri-moon-fill')
 const sunIcon = document.querySelector('.ri-sun-fill')
 
-moonIcon.addEventListener('click', () => {
+function setThemeToDark() {
     document.body.style.backgroundColor = '#1b1b1b'
     document.body.style.color = '#fff'
     document.querySelectorAll('p').forEach(el => {
@@ -13,10 +13,9 @@ moonIcon.addEventListener('click', () => {
     document.querySelector('.contact__mail a').style.borderBottom = '2.5px solid #fff'
     sunIcon.style.display = 'block'
     moonIcon.style.display = 'none'
-})
+}
 
-
-sunIcon.addEventListener('click', () => {
+function setThemeToLight() {
     document.body.style.backgroundColor = '#fff'
     document.body.style.color = '#000'
     document.querySelectorAll('p').forEach(el => {
@@ -34,6 +33,11 @@ sunIcon.addEventListener('click', () => {
     document.querySelector('.contact__mail a').style.borderBottom = '2.5px solid #000'
     sunIcon.style.display = 'none'
     moonIcon.style.display = 'block'
-})
+}
+
+moonIcon.addEventListener('click', setThemeToDark)
+sunIcon.addEventListener('click', setThemeToLight)
+moonIcon.addEventListener('keypress', e => e.key === 'Enter' && setThemeToDark())
+sunIcon.addEventListener('keypress', e => e.key === 'Enter' && setThemeToLight())
 
 console.log('Hello there!')
