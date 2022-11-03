@@ -34,6 +34,8 @@ img {
 
     --margin-top-m: 4em;
     --margin-top-d: 8em;
+
+    --margin-header-footer: 2.5em;
 }
 
 /* Utility Classes */
@@ -131,12 +133,14 @@ a {
 
 .header {
     height: 100vh;
+    margin-top: var(--margin-header-footer);
 }
 
 .header__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: var(--margin-header-footer);
 }
 
 .ri-moon-fill,
@@ -269,6 +273,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: var(--margin-header-footer);
+    margin-top: var(--margin-header-footer);
 }
 
 .footer__links {
@@ -290,6 +296,10 @@ a {
 }
 
 /* Project Layout */
+
+.project-header {
+    margin-top: var(--margin-header-footer);
+}
 
 .project-intro__stack-live-container {
     display: flex;
