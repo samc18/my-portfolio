@@ -282,16 +282,16 @@ a {
 }
 
 .footer__links-column {
-    display: flex;
+    display: block;
 }
 
 .footer__links .link:nth-of-type(n+1) {
     margin-left: 0.5em;
 }
 
-@media (max-width: 410px) {
+@media (min-width: 410px) {
     .footer__links-column {
-        display: block;
+        display: flex;
     }
 }
 
@@ -318,26 +318,42 @@ a {
     margin-top: 2em;
 }
 
-.project-web-stack-and-explanation__img {
+.project-stack__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.project-stack__img {
     margin-inline: auto;
+}
+
+@media (min-width: 31.25em) {
+    .project-stack__container {
+        flex-direction: row;
+    }
 }
 
 @media (min-width: 50em) {
     .project-intro__description,
-    .project-purpose-and-goal__description,
-    .project-web-stack-and-explanation__description,
-    .project-problems-and-thought-process__description,
-    .project-lessons-learned__description {
+    .project-goal__description,
+    .project-stack__description,
+    .project-problems__description,
+    .project-lessons__description {
         width: 55%;
     }
     .project-intro__img {
         width: 50%;
     }
-    .project-web-stack-and-explanation-img-description-container {
+    .project-stack__img-description-container {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
     }
-    .project-web-stack-and-explanation__img {
+    .project-stack__container {
+        flex-direction: column;
+        gap: 2em;
+    }
+    .project-stack__img {
         margin: 0 2em 0 0;
         align-self: center;
     }
